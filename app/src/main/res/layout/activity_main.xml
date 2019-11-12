@@ -85,4 +85,12 @@
             android:text="@string/default_charge_notification_count" />
 
     </RelativeLayout>
+
+    <Button android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="bottom|center"
+        android:layout_below="@+id/fl_charge_increment"
+        android:text="SEND NOTIFICATION"
+        android:onClick="sendNotifications"
+        android:id="@+id/btn"/>
 </LinearLayout>

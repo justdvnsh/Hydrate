@@ -20,13 +20,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.background.sync.ReminderTasks;
 import com.example.android.background.sync.WaterReminderIntentService;
+import com.example.android.background.utilities.NotificationsUtilities;
 import com.example.android.background.utilities.PreferenceUtilities;
 
 public class MainActivity extends AppCompatActivity implements
@@ -89,6 +92,11 @@ public class MainActivity extends AppCompatActivity implements
         intent.setAction(ReminderTasks.ACTION_INCREMENT_WATER_COUNT);
         // TODO (17) Call startService and pass the explicit intent you just created
         startService(intent);
+    }
+
+    public void sendNotifications(View view){
+        Log.i("NOTICATION", "Button clicked");
+        NotificationsUtilities.remindUserWhenCharging(MainActivity.this);
     }
 
     @Override
